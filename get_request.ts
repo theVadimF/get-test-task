@@ -3,7 +3,7 @@ interface tagInterface {
   "name": string
 }
 
-interface petInteface {
+interface petInterface {
   "id": number,
   "name": string,
   "category": {
@@ -15,11 +15,11 @@ interface petInteface {
   "status": string,
 }
 
-const getPendingPets = async (): Promise<petInteface[]> => {
+const getPendingPets = async (): Promise<petInterface[]> => {
   return await fetch('https://petstore3.swagger.io/api/v3/pet/findByStatus?status=pending')
     .then(res => res.json())
     .then(res => {
-      return res as petInteface[];
+      return res as petInterface[];
     })
 }
 
